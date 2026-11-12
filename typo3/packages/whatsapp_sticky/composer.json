@@ -1,0 +1,8 @@
+{
+    "name": "app/whatsapp-sticky",
+    "description": "Reusable TYPO3 sticky WhatsApp contact link, without embedded third-party scripts",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "require": {"typo3/cms-core": "^14.0", "typo3/cms-fluid": "^14.0", "typo3/cms-frontend": "^14.0"},
+    "extra": {"typo3/cms": {"extension-key": "whatsapp_sticky"}}
+}

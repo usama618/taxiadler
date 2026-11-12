@@ -1,0 +1,30 @@
+.nav-dropdown{position:relative}
+.nav-dropdown-heading{display:flex;align-items:center;gap:2px}
+.nav-parent-link{font-size:13px;font-weight:700;padding:9px 0;color:rgba(255,255,255,.82)}
+.nav-parent-link:hover,.nav-dropdown:has([aria-current=page]) .nav-parent-link{color:var(--gold)}
+.nav-submenu-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:40px;border:0;border-radius:4px;background:transparent;color:inherit;cursor:pointer}
+.nav-submenu-toggle .cms-icon{width:15px;height:15px;transition:transform .2s}
+.nav-submenu-toggle[aria-expanded=true] .cms-icon{transform:rotate(180deg)}
+.nav-submenu-toggle:hover{background:#ffffff12;color:var(--gold)}
+.nav-submenu{position:absolute;top:100%;left:-20px;width:330px;padding:10px;background:#192225;border:1px solid #bca25f55;border-radius:9px;box-shadow:0 16px 35px #0004}
+.nav-submenu[hidden]{display:none}
+.nav-submenu a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 12px;border-radius:4px;color:#e4e9e5;font-size:13px;line-height:1.5;font-weight:600}
+.nav-submenu a>.cms-icon{width:16px;height:16px;color:#cbb477;flex:none}
+.nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ead29512;color:var(--gold)}
+.main-nav :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:980px){
+  .site-header:has(.main-nav.is-open){background:#101619;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .main-nav{height:100dvh;bottom:auto;box-sizing:border-box;justify-content:flex-start;overflow-y:auto;overscroll-behavior:contain;padding:105px 7vw calc(115px + env(safe-area-inset-bottom));}
+  .nav-dropdown{width:100%}
+  .nav-dropdown-heading{justify-content:space-between}
+  .nav-parent-link{font-size:28px;color:#fff;padding:10px 0}
+  .nav-submenu-toggle{width:44px;height:44px;border:1px solid #ffffff24;border-radius:7px}
+  .nav-submenu-toggle .cms-icon{width:18px;height:18px}
+  .nav-submenu{position:static;width:100%;margin:4px 0 12px;padding:5px 9px;border-radius:7px;box-shadow:none;background:#192225}
+  .nav-submenu a{padding:13px 8px;font-size:15px;min-height:48px}
+  .main-nav>a:not(.mobile-menu-phone){font-size:25px}
+  .menu-toggle[aria-expanded=true]>span:first-child{transform:translateY(7px) rotate(45deg)}
+  .menu-toggle[aria-expanded=true]>span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded=true]>span:last-child{transform:translateY(-7px) rotate(-45deg)}
+}
+@media(prefers-reduced-motion:reduce){.nav-submenu-toggle .cms-icon{transition:none}}

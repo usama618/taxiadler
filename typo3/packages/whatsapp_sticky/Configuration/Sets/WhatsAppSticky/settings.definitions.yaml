@@ -1,0 +1,9 @@
+categories:
+  whatsappSticky:
+    label: WhatsApp
+settings:
+  whatsappSticky.label:
+    label: Beschriftung des WhatsApp-Links
+    type: string
+    default: WhatsApp-Chat öffnen
+    category: whatsappSticky

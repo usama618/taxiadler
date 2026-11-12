@@ -1,0 +1,23 @@
+{
+  "researched_at": "2026-11-12",
+  "scope": "Five existing service URLs expanded, not duplicated. Content and metadata only; development noindex remains intentional.",
+  "sources": [
+    {"url":"https://taxiadler-rastatt.de/","role":"Existing service scope and contact details, not new capability guarantees"},
+    {"url":"https://taxiamazing.de/services/krankenfahrten-rastatt/","role":"Local competitor: separate healthcare intent, pickup, return and payment questions"},
+    {"url":"https://www.taxi-ahmed.de/","role":"Regional competitor: distinct company, recurring treatment, courier and group service topics"},
+    {"url":"https://www.taxi-kaiser-rastatt.de/","role":"Local competitor: advance arrangement and sitting medical journeys"},
+    {"url":"https://www.g-ba.de/themen/veranlasste-leistungen/krankenbefoerderung/","role":"Primary source: distinguish taxi journeys, medical transport and individual prescription/approval requirements"},
+    {"url":"https://www.aok.de/pk/leistungen/medizinische-behandlung/fahrkosten/","role":"Insurer guidance: individual cost eligibility, documentation and approval"}
+  ],
+  "keyword_intents": [
+    {"page":"/leistungen/krankenfahrten/","primary":"Krankenfahrten Rastatt","supporting":["sitzende Krankenfahrten Rastatt","Taxi zum Arzt Rastatt","Krankenfahrt Verordnung","Krankenfahrt Krankenkasse"],"focus":"One-off appointments, suitability, return journey, payment prerequisites"},
+    {"page":"/leistungen/dialyse-bestrahlungsfahrten/","primary":"Dialysefahrten Rastatt","supporting":["Bestrahlungsfahrten Rastatt","Chemotherapiefahrten Rastatt","Therapiefahrten Rastatt"],"focus":"Recurring treatment schedules, delays, changes and series documentation"},
+    {"page":"/leistungen/stadt-regionalfahrten/","primary":"Stadt- und Regionalfahrten Rastatt","supporting":["Taxi Bahnhof Rastatt","Taxi Rastatt Baden-Baden","Taxi Rastatt Karlsruhe","Gruppentaxi Rastatt"],"focus":"Station pickup, local journeys, events and group logistics; homepage retains broad Taxi Rastatt intent"},
+    {"page":"/leistungen/serien-rechnungsfahrten/","primary":"Taxi auf Rechnung Rastatt","supporting":["Serienfahrten Rastatt","Firmenfahrten Rastatt","regelmäßige Taxifahrten Rastatt"],"focus":"Recurring scheduling versus invoice terms; avoid duplicating treatment-page intent"},
+    {"page":"/leistungen/besorgungen-starthilfe/","primary":"Besorgungsfahrten Rastatt","supporting":["Hol- und Bringdienst Rastatt","Starthilfe Rastatt","Apothekenabholung Rastatt"],"focus":"Task handover, goods and service costs, urgent phone contact; no towing or repair promise"}
+  ],
+  "method": "Qualitative search-intent and competitor-content review. No search-volume, keyword-difficulty or ranking guarantees. Copy is original, not copied from competitors.",
+  "unconfirmed_do_not_claim": ["Direct billing with all insurers", "Wheelchair-accessible vehicles", "Lying or medically supervised transport", "Clinic partnerships", "Guaranteed response times", "Fixed fares", "Same driver for every treatment", "Automatic train monitoring", "Guaranteed jump-start success", "Public live tracking already available"],
+  "editorial_rules": ["All five URLs and navigation links retained", "Unique service-specific H1, SEO title, description and FAQs", "No health information requested through the general form", "Availability and invoicing require personal agreement", "Known owner-confirmed six-passenger vehicle and 20-year history retained", "Existing global header, footer, legal pages and form definition untouched"],
+  "deployment": "Database backup required. Preview: ddev exec vendor/bin/typo3 adler:service-pages. Install: add --apply. This intentionally replaces the five approved local service-page texts; do not reapply over later editor changes without review."
+}

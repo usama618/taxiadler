@@ -1,0 +1,20 @@
+{
+    "name": "app/cookie-consent",
+    "type": "typo3-cms-extension",
+    "description": "TYPO3 v14 cookie consent banner with opt-in script activation",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "typo3/cms-core": "^14.0",
+        "typo3/cms-frontend": "^14.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\CookieConsent\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "cookie_consent"
+        }
+    }
+}

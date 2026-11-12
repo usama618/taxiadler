@@ -1,0 +1,36 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Waldbyte\Adler\:
+    resource: '../Classes/*'
+  Waldbyte\Adler\DataProcessing\ContentProcessor:
+    public: true
+  Waldbyte\Adler\Backend\FormOptions:
+    public: true
+  Waldbyte\Adler\Command\ImportCommand:
+    tags:
+      - name: console.command
+        command: 'adler:import'
+        description: 'Import the initial mockup content without overwriting editor changes'
+  Waldbyte\Adler\Command\AuditCommand:
+    tags:
+      - name: console.command
+        command: 'adler:audit'
+        description: 'Check content types and exercise editor changes on the local development site'
+  Waldbyte\Adler\Command\EditorRoleCommand:
+    tags:
+      - name: console.command
+        command: 'adler:editor-role'
+        description: 'Prepare the non-admin Taxi Adler editor role without creating a login'
+  Waldbyte\Adler\Command\DesignUpgradeCommand:
+    tags:
+      - name: console.command
+        command: 'adler:upgrade-design'
+        description: 'Restore mockup layouts and omitted content while preserving edited field values'
+  Waldbyte\Adler\Command\ServicePagesCommand:
+    tags:
+      - name: console.command
+        command: 'adler:service-pages'
+        description: 'Preview or install the approved local service-page editorial content'

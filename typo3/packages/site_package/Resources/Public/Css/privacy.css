@@ -1,0 +1,25 @@
+.dpf-cookie {
+  --cc-bg: #121b1e;
+  --cc-text: #fff;
+  --cc-muted: #d4ded8;
+  --cc-line: #44504f;
+  --cc-accent: #d4b274;
+  --cc-accent-text: #121b1e;
+  --font-family: 'DM Sans', sans-serif;
+  --font-small: 13px;
+  --font-base: 15px;
+  --font-title: 26px;
+}
+.dpf-cookie__trigger { left: 0; right: auto; }
+.back-to-top { bottom: 90px; }
+@media(max-width:760px){.back-to-top{bottom:calc(155px + env(safe-area-inset-bottom));right:15px}}
+.dpf-cookie__panel { margin-left: 0; max-height: calc(100dvh - 40px); overflow-y: auto; overscroll-behavior: contain; }
+.dpf-cookie__button:focus-visible,
+.dpf-cookie__trigger:focus-visible,
+.dpf-cookie a:focus-visible { outline-color: var(--cc-accent); }
+@media (max-width: 760px) {
+  html[data-cookie-panel-open="true"] .whatsapp-sticky { visibility: hidden; }
+  .mobile-fixed-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dpf-cookie { bottom: calc(85px + env(safe-area-inset-bottom)); }
+  .dpf-cookie__panel { max-height: calc(100dvh - 110px - env(safe-area-inset-bottom)); padding: 18px; }
+}

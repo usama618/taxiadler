@@ -1,0 +1,58 @@
+page = PAGE
+page {
+  typeNum = 0
+  shortcutIcon = EXT:site_package/Resources/Public/Icons/favicon-192.png
+  meta.viewport = width=device-width, initial-scale=1
+  headerData.20 = TEXT
+  headerData.20.value = <meta name="robots" content="noindex, nofollow">
+  includeCSS {
+    fonts = EXT:site_package/Resources/Public/Css/fonts.css
+    10 = EXT:site_package/Resources/Public/Css/styles.css
+    20 = EXT:site_package/Resources/Public/Css/premium.css
+    30 = EXT:site_package/Resources/Public/Css/pages.css
+    40 = EXT:site_package/Resources/Public/Css/airport.css
+    50 = EXT:site_package/Resources/Public/Css/reviews.css
+    60 = EXT:site_package/Resources/Public/Css/cms.css
+    70 = EXT:site_package/Resources/Public/Css/privacy-modal.css
+    80 = EXT:site_package/Resources/Public/Css/navigation.css
+  }
+  includeJSFooter.adler = EXT:site_package/Resources/Public/JavaScript/site.js
+  includeJSFooter.adler_privacy_modal = EXT:site_package/Resources/Public/JavaScript/privacy-modal.js
+  10 = PAGEVIEW
+  10 {
+    paths.0 = EXT:site_package/Resources/Private/PageView/
+    dataProcessing.10 = Waldbyte\Adler\DataProcessing\ContentProcessor
+  }
+}
+lib.adlerContent = CONTENT
+lib.adlerContent {
+  table = tt_content
+  select {
+    pidInList = this
+    where = colPos=0
+    orderBy = sorting
+  }
+}
+lib.adlerGlobal = CONTENT
+lib.adlerGlobal {
+  table = tt_content
+  select {
+    pidInList.field = siteRoot
+    where = colPos={field:colPos}
+    where.insertData = 1
+    orderBy = sorting
+  }
+}
+lib.contentElement {
+  settings.privacyUrl = {$cookieConsent.privacyUrl}
+  settings.footerCredit {
+    label = {$adler.footerCredit.label}
+    name = {$adler.footerCredit.name}
+    url = {$adler.footerCredit.url}
+  }
+  partialRootPaths.150 = EXT:whatsapp_sticky/Resources/Private/Partials/
+  templateRootPaths.200 = EXT:site_package/Resources/Private/Content/Templates/
+  partialRootPaths.200 = EXT:site_package/Resources/Private/Content/Partials/
+}
+plugin.tx_form.settings.yamlConfigurations.200 = EXT:site_package/Configuration/Form.yaml
+module.tx_form.settings.yamlConfigurations.200 = EXT:site_package/Configuration/Form.yaml

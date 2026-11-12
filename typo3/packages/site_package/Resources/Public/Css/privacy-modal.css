@@ -1,0 +1,17 @@
+.privacy-dialog{width:min(920px,calc(100% - 32px));height:min(85vh,900px);height:min(85dvh,900px);max-height:85vh;max-height:85dvh;margin:auto;padding:0;border:1px solid #cfc4ac;border-radius:12px;background:#f7f6f2;color:#172020;box-shadow:0 24px 90px #0006;overflow:hidden}
+.privacy-dialog[open]{display:flex;flex-direction:column}
+.privacy-dialog::backdrop{background:#081013bf;backdrop-filter:blur(4px)}
+body.privacy-modal-open{overflow:hidden}
+.privacy-dialog__header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 28px;border-bottom:1px solid #ded8ca;background:#fff;flex:none}
+.privacy-dialog__header h2{margin:0;font-family:'DM Sans',sans-serif;font-size:28px;line-height:1.2;letter-spacing:-.04em;font-weight:700}
+.privacy-dialog__close{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border:1px solid #d6cdbb;border-radius:50%;background:#fff;color:#172020;cursor:pointer}
+.privacy-dialog__close:hover{background:#eee7d9}
+.privacy-dialog__content{flex:1;max-width:none;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:28px;scroll-behavior:auto}
+.privacy-dialog__content .editorial-copy{padding:0}
+.privacy-dialog__content h3{font-size:22px;font-weight:700;line-height:1.4;margin:28px 0 16px}
+.privacy-dialog__content p:last-child{margin-bottom:0}
+.privacy-dialog__status{font-size:15px;line-height:1.8;margin:0;color:#485557}
+.privacy-dialog__footer{padding:16px 28px;border-top:1px solid #ded8ca;background:#fff;flex:none}
+.privacy-dialog__footer a{font-size:13px;text-decoration:underline;text-underline-offset:4px;color:#775822}
+.privacy-dialog :focus-visible{outline:3px solid #b18b40;outline-offset:3px}
+@media(max-width:760px){.privacy-dialog{width:calc(100% - 20px);height:92vh;height:92dvh;max-height:92vh;max-height:92dvh;border-radius:10px}.privacy-dialog__header{padding:14px 18px;gap:12px}.privacy-dialog__header h2{font-size:24px}.privacy-dialog__content{padding:22px 18px}.privacy-dialog__content p{font-size:14px;line-height:1.85}.privacy-dialog__footer{padding:14px 18px}}

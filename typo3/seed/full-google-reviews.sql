@@ -1,0 +1,11 @@
+-- Original German wording checked on Google Maps on 2026-11-12.
+-- Update only the imported excerpts, preserving subsequent editor changes.
+START TRANSACTION;
+UPDATE tx_adler_item SET description='<p>Erstklassiger Service! Pünktlich, zuverlässig und immer freundlich. Das Fahrzeug war makellos sauber und die Fahrt sehr angenehm. Faire Preise ohne Überraschungen. Dieser Taxiservice ist meine erste Wahl – ich empfehle ihn jedem weiter!</p>' WHERE uid=31 AND title='misbah zeenat' AND description='<p>Pünktlich, zuverlässig und immer freundlich.</p>' AND deleted=0;
+UPDATE tx_adler_item SET description='<p>Ich bin schon öfter mit Taxi Adler gefahren und jedes Mal super zufrieden gewesen. Man fühlt sich einfach gut aufgehoben – das Auto ist immer sauber, die Fahrer sind total freundlich und man wird pünktlich abgeholt.</p>' WHERE uid=32 AND title='Chandike' AND description='<p>… einfach gut aufgehoben …</p>' AND deleted=0;
+UPDATE tx_adler_item SET description='<p>Der Fahrer war sehr nett und fuhr uns sicher zum Ziel!</p>' WHERE uid=33 AND title='Matthias Lichtenberg' AND description='<p>… fuhr uns sicher zum Ziel!</p>' AND deleted=0;
+UPDATE tx_adler_item SET description='<p>Ich bin sehr zufrieden mit Taxi Adler Rastatt. Sehr freundlicher und zuverlässiger Service, pünktlich und professionell. Die Fahrt war angenehm und unkompliziert. Man fühlt sich als Fahrgast gut aufgehoben. Klare Empfehlung – jederzeit gerne wieder! 🚕 …</p>' WHERE uid=34 AND title='Al Ch' AND description='<p>… pünktlich und professionell. …</p>' AND deleted=0;
+UPDATE tx_adler_item SET description='<p>Super Taxi, zuverlässige Fahrer, und pünktlich. Immer wieder gern!</p>' WHERE uid=35 AND title='shayan ahmed' AND description='<p>… Immer wieder gern!</p>' AND deleted=0;
+UPDATE tx_adler_item SET description='<p>Alles super! Zuverlässig und sehr freundlich!</p>' WHERE uid=36 AND title='Shaiheryar Khokhar' AND description='<p>… Zuverlässig und sehr freundlich!</p>' AND deleted=0;
+UPDATE tt_content SET adler_note='Ausgewählte Rezensionen · Google-Bewertungen',tstamp=UNIX_TIMESTAMP() WHERE uid=7 AND CType='adler_reviews' AND adler_note='Ausgewählte Rezensionen · Auszüge aus Google-Bewertungen' AND deleted=0;
+COMMIT;

@@ -1,0 +1,52 @@
+CREATE TABLE tt_content (
+  adler_design_key varchar(255) DEFAULT '' NOT NULL,
+  adler_layout varchar(40) DEFAULT 'default' NOT NULL,
+  adler_side_header varchar(255) DEFAULT '' NOT NULL,
+  adler_side_text text,
+  adler_preset_destination varchar(255) DEFAULT '' NOT NULL,
+  adler_tertiary_label varchar(255) DEFAULT '' NOT NULL,
+  adler_tertiary_link varchar(2048) DEFAULT '' NOT NULL,
+  adler_eyebrow varchar(255) DEFAULT '' NOT NULL,
+  adler_accent varchar(255) DEFAULT '' NOT NULL,
+  adler_anchor varchar(80) DEFAULT '' NOT NULL,
+  adler_note text,
+  adler_primary_label varchar(255) DEFAULT '' NOT NULL,
+  adler_primary_link varchar(2048) DEFAULT '' NOT NULL,
+  adler_secondary_label varchar(255) DEFAULT '' NOT NULL,
+  adler_secondary_link varchar(2048) DEFAULT '' NOT NULL,
+  adler_phone varchar(255) DEFAULT '' NOT NULL,
+  adler_mobile varchar(255) DEFAULT '' NOT NULL,
+  adler_email varchar(255) DEFAULT '' NOT NULL,
+  adler_address text,
+  adler_hours varchar(255) DEFAULT '' NOT NULL,
+  adler_whatsapp varchar(2048) DEFAULT '' NOT NULL,
+  adler_source_label varchar(255) DEFAULT '' NOT NULL,
+  adler_source_link varchar(2048) DEFAULT '' NOT NULL,
+  adler_rating decimal(10,2) DEFAULT '5' NOT NULL,
+  adler_count int DEFAULT '0' NOT NULL,
+  adler_autoplay smallint DEFAULT '1' NOT NULL,
+  adler_interval int DEFAULT '5000' NOT NULL,
+  adler_theme varchar(20) DEFAULT 'light' NOT NULL,
+  adler_form varchar(255) DEFAULT '' NOT NULL,
+  adler_items int DEFAULT '0' NOT NULL
+);
+CREATE TABLE sys_file_metadata (
+  adler_image_origin varchar(12) DEFAULT '' NOT NULL
+);
+CREATE TABLE tx_adler_item (
+  submenu_pages varchar(255) DEFAULT '' NOT NULL,
+  link_group varchar(20) DEFAULT 'navigation' NOT NULL,
+  parent int DEFAULT '0' NOT NULL,
+  item_type varchar(20) DEFAULT 'card' NOT NULL,
+  title varchar(255) DEFAULT '' NOT NULL,
+  eyebrow varchar(255) DEFAULT '' NOT NULL,
+  description text,
+  image int DEFAULT '0' NOT NULL,
+  link varchar(2048) DEFAULT '' NOT NULL,
+  link_label varchar(255) DEFAULT '' NOT NULL,
+  credit_label varchar(255) DEFAULT '' NOT NULL,
+  credit_link varchar(2048) DEFAULT '' NOT NULL,
+  icon varchar(40) DEFAULT 'none' NOT NULL,
+  rating int DEFAULT '5' NOT NULL,
+  KEY parent (parent)
+);

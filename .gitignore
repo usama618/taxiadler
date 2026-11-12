@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.vscode/
+/output/
+/tmp/
+*.sql.gz
+*.sqlite*
+*.key
+*.pem
+*.p12
+.local-credentials

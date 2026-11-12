@@ -1,0 +1,214 @@
+/* Taxi Adler — Premium Motion Edition
+   Additional styles scoped on top of the original working website.
+   All motion honors prefers-reduced-motion. */
+:root{--premium-charcoal:#171d20;--premium-gold:#b28737;--premium-paper:#f7f5ef;--premium-secondary:#4b565a}
+html{scroll-padding-top:92px}
+body{font-size:16px}
+.scroll-progress{position:absolute;left:0;top:0;width:100%;height:3px;z-index:4;transform-origin:0 50%;background:linear-gradient(90deg,#fff0af,#e5b852,#ae8131);box-shadow:0 0 14px rgba(237,188,85,.3);pointer-events:none}
+.btn{border-radius:5px;position:relative;overflow:hidden;isolation:isolate;font-size:14px}
+.btn-gold:before{content:"";position:absolute;inset:-20%;transform:translateX(-160%) skew(-19deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);transition:transform .62s ease;pointer-events:none;z-index:-1}
+.btn-gold:hover:before{transform:translateX(160%) skew(-19deg)}
+.btn-gold:hover{box-shadow:0 9px 26px rgba(188,135,35,.24)}
+.section-label{font-size:12px;letter-spacing:.18em;color:#485256;font-weight:850}
+.section-label-light{color:#ede0bc}
+.kicker{font-size:12px;letter-spacing:.15em}
+.dark-kicker{color:#4c5658}
+.section-label-bar{width:29px}
+.reveal{transition-duration:.95s}
+/* Hero / navigation readability */
+.main-nav>a:not(.mobile-menu-phone){font-size:13px}
+.header-phone{font-size:14px}
+.hero-eyebrow{font-size:12px;color:#fbe19b}
+.hero-subtitle{font-size:18px;max-width:610px;line-height:1.68;color:#f3f3f1}
+.hero-facts strong{font-size:14px}
+.hero-facts small{font-size:12px;color:#e1e5e2}
+.hero-scroll{font-size:12px;color:#fff}
+.hero-heading em{background:linear-gradient(110deg,#e3af44 8%,#ffe39c 32%,#ecc05e 52%,#ffe39c 73%,#e3af44 94%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:225% auto;animation:heroGold 11s ease-in-out infinite alternate}
+@keyframes heroGold{from{background-position:0 50%}to{background-position:100% 50%}}
+/* Form: unmistakable hierarchy and responsive accessible controls */
+.booking-card{border-radius:16px;box-shadow:0 30px 90px rgba(16,26,29,.18)}
+.booking-card:before{height:6px;background:linear-gradient(100deg,#c0933c 0%,#fbe1a1 43%,#c5953b 72%,#e7d9b7 100%);background-size:230% 100%;animation:goldFlow 12s ease-in-out infinite alternate}
+@keyframes goldFlow{to{background-position:100% 0}}
+.booking-card-top h2{font-size:clamp(29px,2.7vw,36px)}
+.booking-side-note{color:#4f595d;font-size:13px}
+.field-label{font-size:14px;color:#1b292d;line-height:1.4}
+.field input,.field select{font-size:15px;transition:border-color .25s,box-shadow .25s,background .25s;min-height:46px}
+.field input:hover,.field select:hover{border-color:#b4b7b0}
+.field input:focus,.field select:focus{background:#fff;outline:none;border-color:#b89143;box-shadow:0 0 0 4px rgba(204,165,78,.18)}
+.form-privacy,.check-wrapper{font-size:14px;color:#374245}
+.demo-notice{font-size:13px!important;color:#5d6968!important}
+.booking-afterline{font-size:13px;color:#49565b}
+.booking-afterline span{font-size:13px}
+/* Services: photographic layers and deliberate interaction. */
+.services-intro>p{font-size:17px;line-height:1.8;color:#d4dedd}
+.services-grid{gap:18px}
+.service-card{border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.17);transition:box-shadow .45s,border-color .45s,transform .45s}
+.service-card:hover{border-color:rgba(244,206,117,.55);box-shadow:0 27px 48px rgba(0,0,0,.29);transform:translateY(-7px)}
+.service-card:focus-visible{outline-offset:4px}
+.service-card:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transform:translateX(-100%);background:linear-gradient(104deg,transparent 32%,rgba(255,255,255,.1) 49%,transparent 66%);transition:transform .85s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.service-card:hover:after{transform:translateX(100%);opacity:1}
+.service-card-top,.service-card-content{z-index:2}
+.service-subtitle{font-size:12px;color:#ffdfa3}
+.service-card-content strong{font-size:clamp(23px,2.2vw,31px)}
+.service-description{font-size:14px;line-height:1.6;color:#f0f3f2}
+.service-footnote{font-size:14px;color:#d0dbda}
+/* Why-us section: more legible copy and a tactile hover that retains structure */
+.benefits-left>p,.statement-aside p{font-size:17px;line-height:1.8;color:#4b575a}
+.statement-aside p{color:#fff}
+.text-link{font-size:14px}
+.benefit-item{transition:transform .4s,background .4s,padding .4s}
+.benefit-item:hover{transform:translateX(6px);background:linear-gradient(90deg,rgba(215,186,116,.08),transparent 85%)}
+.benefit-symbol{transition:background .3s,transform .4s,border-color .3s}
+.benefit-item:hover .benefit-symbol{background:#f5ead1;border-color:#d2b273;transform:rotate(-8deg)}
+.benefit-number{font-size:12px;color:#657071}
+.benefit-item h3{font-size:23px}
+.benefit-item p{font-size:15px;line-height:1.65;color:#465356}
+.benefit-end{transition:transform .3s,color .3s}
+.benefit-item:hover .benefit-end{transform:translate(4px,-4px);color:#aa7a25}
+.statement-backdrop{animation:cinematicPan 32s ease-in-out infinite alternate;will-change:transform}
+@keyframes cinematicPan{from{transform:scale(1.03) translate3d(0,0,0)}to{transform:scale(1.1) translate3d(-1.1%,0,0)}}
+/* The redesigned editorial 3-step journey */
+.steps-section{position:relative;isolation:isolate;overflow:hidden;background:var(--premium-paper);padding:128px 0 126px}
+.steps-ambient{position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse 42% 46% at 98% 13%,rgba(219,185,118,.18),transparent 74%),radial-gradient(ellipse 38% 48% at 1% 90%,rgba(226,201,149,.13),transparent 80%)}
+.steps-container{position:relative}
+.steps-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:70px;margin-bottom:61px}
+.steps-heading{margin:0}
+.steps-heading h2{color:#131b1d;font-size:clamp(54px,5.8vw,92px);line-height:1.07;letter-spacing:-.065em;font-weight:750}
+.steps-heading h2 em{color:#aa7b2c;position:relative;white-space:nowrap}
+.steps-heading h2 em:after{content:"";position:absolute;left:3%;right:0;bottom:-10px;height:2px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#b98832,#e8ce91,#c19a51);transition:transform 1.4s cubic-bezier(.2,.7,.15,1) .45s}
+.steps-intro.visible .steps-heading h2 em:after{transform:scaleX(1)}
+.steps-lead{width:min(340px,100%);margin:0 2% 4px 0;color:#48565a;font-size:18px;line-height:1.75;font-weight:500}
+.steps-track{position:relative;height:40px;margin:-25px 0 17px;opacity:1;transform:none;z-index:1}
+.steps-track svg{height:40px;width:100%;overflow:visible}
+.steps-track-base{fill:none;stroke:rgba(181,146,76,.2);stroke-width:2;stroke-dasharray:5 9}
+.steps-track-active{fill:none;stroke:#b48b42;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2s cubic-bezier(.2,.75,.17,1) .15s}
+.steps-track.visible .steps-track-active{stroke-dashoffset:0}
+.track-point{position:absolute;top:11px;width:16px;height:16px;background:#f7f5ef;border:4px solid #b89149;border-radius:50%;box-shadow:0 0 0 6px rgba(190,153,80,.15)}
+.track-one{left:16%}.track-two{left:calc(50% - 8px)}.track-three{right:16%}
+.steps-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px;border:0;border-radius:0}
+.step-card{position:relative;min-width:0;padding:27px 27px 34px;min-height:510px;display:flex;flex-direction:column;border:1px solid #ddd6c8;border-radius:17px;background:rgba(255,255,255,.94);box-shadow:0 12px 40px rgba(31,37,35,.055);overflow:hidden;transition:opacity .9s,transform .65s cubic-bezier(.17,.75,.3,1),border-color .4s,box-shadow .4s}
+.step-card:last-child{border-right:1px solid #ddd6c8}
+.step-card.visible:hover{transform:translateY(-10px);border-color:#c49b51;box-shadow:0 29px 58px rgba(32,37,35,.13)}
+.step-card:after{content:"";position:absolute;right:-100px;top:-135px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(233,208,153,.18),transparent 69%);pointer-events:none;transition:transform .8s}
+.step-card:hover:after{transform:translate(-45px,35px)}
+.step-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px;position:relative;z-index:1}
+.step-icon{width:55px;height:55px;border-radius:50%;color:#805f25;background:#f6ead0;border:1px solid #ead7ac;box-shadow:0 6px 16px #b48e4c15;transition:background .3s,transform .4s,box-shadow .4s}
+.step-card:hover .step-icon{transform:scale(1.09) rotate(-7deg);box-shadow:0 9px 20px rgba(174,131,44,.18);background:#f9dc92}
+.step-no{color:#5a6464;font-size:12px;letter-spacing:.16em;font-weight:850}
+.step-visual{position:relative;isolation:isolate;width:100%;aspect-ratio:920/520;border-radius:11px;overflow:hidden;background:#1c282b;box-shadow:0 14px 25px rgba(17,29,28,.12);margin-bottom:28px}
+.step-visual img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.15,.65,.2,1),filter .6s}
+.step-card:hover .step-visual img{transform:scale(1.065) translateX(1.1%);filter:saturate(1.12)}
+.step-visual-label{position:absolute;bottom:11px;right:12px;padding:7px 9px;background:rgba(12,20,23,.78);border:1px solid rgba(231,205,139,.5);border-radius:5px;color:#f2ddb4;font-size:9px;font-weight:850;letter-spacing:.12em;backdrop-filter:blur(9px)}
+.step-visual-sheen{position:absolute;inset:0;background:linear-gradient(112deg,transparent 35%,rgba(255,255,255,.17) 50%,transparent 64%);transform:translateX(-130%);transition:transform .85s ease;pointer-events:none}
+.step-card:hover .step-visual-sheen{transform:translateX(150%)}
+.step-body{position:relative;z-index:1}
+.step-kicker{display:block;margin-bottom:11px;color:#8c6e3d;font-size:11px;font-weight:850;letter-spacing:.17em}
+.step-card h3{font-size:clamp(25px,2.15vw,31px);font-weight:800;color:#151c1e;letter-spacing:-.047em;line-height:1.12;margin:0 0 14px}
+.step-card p{font-size:16px;font-weight:500;line-height:1.77;color:#485458;max-width:100%;margin:0;padding-right:7px}
+.step-corner{margin-top:auto;position:absolute;right:28px;bottom:23px;color:#b78833;opacity:0;transform:translate(-9px,9px);transition:opacity .4s,transform .4s}
+.step-card:hover .step-corner{opacity:1;transform:translate(0,0)}
+.steps-bottom{display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:32px;padding-top:29px;border-top:1px solid #d6d5cd}
+.steps-disclaimer{font-size:14px;line-height:1.6;color:#3f4e52;text-align:left;margin:0;max-width:850px;display:flex;align-items:flex-start;gap:14px}
+.steps-disclaimer svg{flex:0 0 auto;color:#a4772b;margin-top:2px}
+.steps-disclaimer strong{color:#192224}
+.steps-disclaimer a{color:#6d4c16;font-weight:850;text-decoration:underline;text-underline-offset:3px}
+.steps-cta{display:flex;align-items:center;gap:13px;font-size:14px;font-weight:850;color:#222a2b;border-bottom:1px solid #b38d45;padding-bottom:11px;white-space:nowrap;transition:gap .35s,color .35s}
+.steps-cta:hover{gap:19px;color:#986d27}
+/* Other copy / FAQ / contact readability */
+.faq-left p{color:#475357;font-size:16px;max-width:350px;line-height:1.8}
+.faq-item summary{font-size:17px;line-height:1.5;transition:color .3s,padding-left .3s}
+.faq-item:hover summary,.faq-item[open] summary{color:#866226;padding-left:7px}
+.faq-item p{font-size:15px;line-height:1.8;color:#465257}
+.faq-item[open] p{animation:answerEnter .38s ease both}
+@keyframes answerEnter{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.contact-layout p{font-size:17px;color:#ecf0ee}
+.contact-photo{animation:cinematicPan 28s ease-in-out infinite alternate}
+.footer-about p,.footer-column{font-size:14px;line-height:1.85}
+.footer-about p{color:#c3ceca}
+.footer-column{color:#cad2ce}
+.footer-column h3{font-size:13px}
+.footer-bottom{font-size:12px;color:#aeb9b5}
+.review-modal .modal-intro,.review-data dd{font-size:14px}
+.review-data dt{font-size:11px;color:#56605e}
+/* Back to top*/
+.back-to-top{position:fixed;right:24px;bottom:25px;z-index:90;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;width:54px;height:54px;border-radius:50%;background:#f2c55d;color:#172024;border:1px solid #e5bc57;box-shadow:0 12px 35px #0a11133e;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .35s,transform .35s,background .35s}
+.back-to-top svg{transform:rotate(-45deg)}
+.back-to-top span{font-size:8px;font-weight:900;letter-spacing:.1em}
+.back-to-top.shown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#ffe09c;transform:translateY(-5px)}
+@media(max-width:1100px){.steps-intro{gap:25px}.steps-lead{font-size:16px;max-width:275px}.steps-list{gap:13px}.step-card{padding:22px 20px 30px;min-height:480px}.step-card h3{font-size:24px}.step-card p{font-size:15px}.services-intro>p{font-size:16px}}
+@media(max-width:760px){
+  .hero-eyebrow{font-size:10px}.hero-subtitle{font-size:15px;line-height:1.65}
+  .hero-facts strong{font-size:12px}.hero-facts small{font-size:11px}
+  .btn-large{font-size:13px}
+  .kicker,.section-label{font-size:11px}
+  .booking-side-note{display:none}.booking-card-top{padding:20px 22px 18px}
+  .booking-card-top h2{font-size:clamp(25px,6.2vw,32px)}
+  .booking-form{padding:20px 22px 22px}.booking-card{border-radius:11px}
+  .field-label{font-size:13px}.field input,.field select{font-size:16px;min-height:48px}
+  .booking-afterline span{font-size:11px}.demo-notice{font-size:12px!important}
+  .services-intro>p{font-size:16px}.service-card-content strong{font-size:23px}.service-description{font-size:13px}.service-subtitle{font-size:11px}
+  .benefits-left>p{font-size:16px}.benefit-item p{font-size:14px}
+  .steps-section{padding:87px 0 92px}
+  .steps-intro{display:block;margin-bottom:25px}
+  .steps-heading h2{font-size:clamp(44px,9.8vw,66px)}
+  .steps-lead{margin:28px 0 0;max-width:540px;font-size:16px}
+  .steps-track{display:none}
+  .steps-list{grid-template-columns:1fr;gap:15px;border:0}
+  .step-card,.step-card:last-child{min-height:0;border:1px solid #ddd6c8;padding:21px 21px 28px;border-radius:14px}
+  .step-top{margin-bottom:17px}.step-icon{width:50px;height:50px}
+  .step-visual{margin-bottom:22px;max-height:300px}
+  .step-body{padding:0 1px}.step-card h3{font-size:26px}
+  .step-card p{font-size:15px;line-height:1.7}
+  .step-corner{display:none}
+  .steps-bottom{margin-top:26px;display:flex;align-items:flex-start;flex-direction:column;gap:22px}
+  .steps-disclaimer{font-size:13px;line-height:1.65}
+  .steps-cta{font-size:14px}
+  .faq-left p{font-size:15px}.faq-item summary{font-size:16px}.faq-item p{font-size:14px}
+  .contact-layout p{font-size:15px}
+  .footer-about p,.footer-column{font-size:13px}.footer-bottom{font-size:11px}
+  .back-to-top{display:none}
+}
+@media(max-width:420px){.step-card{padding:19px}.steps-heading h2{font-size:clamp(42px,11vw,50px)}.step-card h3{font-size:24px}.steps-disclaimer{font-size:12px}.hero-subtitle{font-size:14px}.service-description{font-size:12px}}
+@media(prefers-reduced-motion:reduce){
+  .hero-heading em,.booking-card:before,.statement-backdrop,.contact-photo{animation:none!important}
+  .steps-track-active{stroke-dashoffset:0!important;transition:none!important}
+  .step-card,.step-icon,.step-visual img,.service-card,.service-card:after,.btn-gold:before{transition:none!important}
+}
+
+/* Local landmarks: warm editorial photography with clear source credits. */
+.rastatt-section{padding:105px 0 110px;background:#f7f5ef;color:#171d20}
+.rastatt-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:45px}
+.rastatt-intro h2{font-family:'DM Sans',sans-serif;font-size:clamp(48px,6vw,84px);letter-spacing:-.065em;line-height:1.05;margin:0;font-weight:700}
+.rastatt-intro h2 em{font-family:Georgia,serif;font-weight:400;color:#a57d36;letter-spacing:-.045em}
+.rastatt-intro>p{max-width:390px;margin:0 0 5px;font-size:17px;line-height:1.85;color:#4b565a}
+.rastatt-grid{display:grid;grid-template-columns:1fr 1fr;gap:27px}
+.rastatt-card{min-width:0;background:#fff;border:1px solid #e1dacd;border-radius:15px;overflow:hidden;box-shadow:0 14px 40px #20272008}
+.rastatt-photo{position:relative;aspect-ratio:1.85;overflow:hidden;background:#d5cec0}
+.rastatt-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s ease}
+.rastatt-card:hover .rastatt-photo img{transform:scale(1.035)}
+.rastatt-photo>span{position:absolute;left:18px;bottom:17px;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #ffffff45;border-radius:4px;background:#152025e6;color:#f7e4b8;font-size:9px;letter-spacing:.12em;font-weight:750}
+.rastatt-card-body{padding:29px 30px 25px;display:flex;flex-direction:column;align-items:flex-start}
+.rastatt-kicker{color:#8e6c30;font-size:10px;letter-spacing:.17em;font-weight:800}
+.rastatt-card h3{font-size:clamp(26px,2.4vw,35px);letter-spacing:-.045em;line-height:1.15;margin:12px 0}
+.rastatt-card-body p{font-size:16px;line-height:1.8;color:#4b565a;margin:0 0 23px;max-width:490px}
+.rastatt-card-body .text-link{margin-top:auto;font-size:14px}
+.rastatt-credit{margin:0;padding:14px 30px 18px;border-top:1px solid #eee9df;font-size:10px;line-height:1.8;color:#68706e}
+.rastatt-credit a{text-decoration:underline;text-underline-offset:2px}
+.rastatt-credit a:hover{color:#805f25}
+@media(max-width:760px){.rastatt-section{padding:75px 0}.rastatt-intro{display:block;margin-bottom:30px}.rastatt-intro>p{margin:25px 0 0;max-width:540px;font-size:16px}.rastatt-grid{grid-template-columns:1fr;gap:24px}.rastatt-card-body{padding:24px}.rastatt-credit{padding:13px 24px 17px}.rastatt-photo>span{left:13px;bottom:13px;font-size:8px}.rastatt-card h3{font-size:29px}}
+@media(prefers-reduced-motion:reduce){.rastatt-photo img{transition:none}.rastatt-card:hover .rastatt-photo img{transform:none}}
+
+/* Vehicle options are integrated into the existing benefits section. */
+.vehicle-options{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:42px;margin-top:65px;padding-top:45px;border-top:1px solid #dcd9d0}
+.vehicle-options-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.vehicle-options-photos img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:9px}
+.vehicle-options-copy .section-label{font-size:10px;letter-spacing:.14em;color:#85632a}
+.vehicle-options-copy h3{font-size:clamp(27px,2.6vw,37px);line-height:1.2;letter-spacing:-.045em;margin:12px 0 15px}
+.vehicle-options-copy p{font-size:16px;line-height:1.8;color:#485458;margin:0 0 20px}
+.vehicle-options-copy strong{color:#222d30}
+.vehicle-options-copy .text-link{font-size:14px}
+.vehicle-options-copy small{display:block;margin-top:18px;font-size:11px;line-height:1.6;color:#68706e}
+.contact-photo{background-image:url('/images/taxi-vw-touran-black.webp');background-position:50% 55%}
+@media(max-width:1000px){.vehicle-options{grid-template-columns:1fr;gap:27px}.vehicle-options-copy{max-width:650px}}
+@media(max-width:760px){.vehicle-options{margin-top:42px;padding-top:32px}.vehicle-options-photos{gap:10px}.vehicle-options-copy h3{font-size:30px}.vehicle-options-copy p{font-size:15px}}

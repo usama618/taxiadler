@@ -1,0 +1,2 @@
+# Root-header WhatsApp data is passed by the shared page layout; never duplicate the number.
+page.includeCSS.adler_privacy = EXT:site_package/Resources/Public/Css/privacy.css

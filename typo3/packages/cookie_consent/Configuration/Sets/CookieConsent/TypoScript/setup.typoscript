@@ -1,0 +1,28 @@
+page.includeCSS.cookie_consent = EXT:cookie_consent/Resources/Public/Css/cookie-consent.css
+page.includeJSFooter.cookie_consent = EXT:cookie_consent/Resources/Public/JavaScript/cookie-consent.js
+page.footerData.996 = FLUIDTEMPLATE
+page.footerData.996 {
+  file = EXT:cookie_consent/Resources/Private/Templates/Banner.html
+  variables {
+    cookieName = TEXT
+    cookieName.value = {$cookieConsent.cookieName}
+    version = TEXT
+    version.value = {$cookieConsent.version}
+    description = TEXT
+    description.value = {$cookieConsent.description}
+    privacyUrl = TEXT
+    privacyUrl.value = {$cookieConsent.privacyUrl}
+    externalMedia = TEXT
+    externalMedia.value = {$cookieConsent.externalMedia}
+    externalMediaDescription = TEXT
+    externalMediaDescription.value = {$cookieConsent.externalMediaDescription}
+    statistics = TEXT
+    statistics.value = {$cookieConsent.statistics}
+    statisticsDescription = TEXT
+    statisticsDescription.value = {$cookieConsent.statisticsDescription}
+    marketing = TEXT
+    marketing.value = {$cookieConsent.marketing}
+    marketingDescription = TEXT
+    marketingDescription.value = {$cookieConsent.marketingDescription}
+  }
+}

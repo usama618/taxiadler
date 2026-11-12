@@ -1,0 +1,4 @@
+<div class="cms-buttons">
+<f:if condition="{data.adler_primary_link} && {data.adler_primary_label}"><f:link.typolink parameter="{data.adler_primary_link}" class="btn btn-gold"><f:if condition="{primaryIsPhone}"><f:render partial="Icon" arguments="{name:'phone'}"/></f:if>{data.adler_primary_label}<f:if condition="!{primaryIsPhone}"><f:render partial="Icon" arguments="{name:'arrow-up-right'}"/></f:if></f:link.typolink></f:if>
+<f:if condition="{data.adler_secondary_link} && {data.adler_secondary_label}"><f:link.typolink parameter="{data.adler_secondary_link}" class="btn btn-outline"><f:render partial="Icon" arguments="{name:secondaryIcon}"/>{data.adler_secondary_label}</f:link.typolink></f:if>
+</div>

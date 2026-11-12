@@ -1,0 +1,33 @@
+<div class="dpf-cookie" data-cookie-consent data-cookie-name="{cookieName}" data-cookie-version="{version}" hidden>
+  <button class="dpf-cookie__trigger" type="button" data-cookie-open aria-label="Cookie-Einstellungen öffnen" aria-controls="cookie-consent-panel" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 4 4 4 4 0 0 0 5 5Z"/><path d="M8 8h.01M7 14h.01M12 12h.01M13 17h.01"/></svg>
+  </button>
+  <section class="dpf-cookie__panel" id="cookie-consent-panel" role="dialog" aria-modal="false" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
+    <div class="dpf-cookie__copy">
+      <p class="dpf-cookie__eyebrow">Datenschutz</p>
+      <h2 id="cookie-consent-title">Cookie-Einstellungen</h2>
+      <p id="cookie-consent-description">{description}</p>
+      <f:link.typolink parameter="{privacyUrl}" additionalAttributes="{data-cookie-privacy: 'true'}">Datenschutzerklärung</f:link.typolink>
+    </div>
+    <div class="dpf-cookie__options" id="cookie-consent-options" data-cookie-options hidden>
+      <label><input type="checkbox" checked disabled><span><strong>Notwendig</strong><small>Grundfunktionen, Sicherheit und Ihre gespeicherte Datenschutzeinstellung. Nicht abwählbar.</small></span></label>
+      <f:if condition="{externalMedia}">
+        <label><input type="checkbox" name="external_media" data-cookie-category="external_media"><span><strong>Externe Medien</strong><small>{externalMediaDescription}</small></span></label>
+      </f:if>
+      <f:if condition="{statistics}">
+        <label><input type="checkbox" name="statistics" data-cookie-category="statistics"><span><strong>Statistik</strong><small>{statisticsDescription}</small></span></label>
+      </f:if>
+      <f:if condition="{marketing}">
+        <label><input type="checkbox" name="marketing" data-cookie-category="marketing"><span><strong>Marketing</strong><small>{marketingDescription}</small></span></label>
+      </f:if>
+    </div>
+    <div class="dpf-cookie__actions">
+      <button class="dpf-cookie__button" type="button" data-cookie-necessary><f:if condition="{externalMedia} || {statistics} || {marketing}"><f:then>Nur notwendige</f:then><f:else>Verstanden</f:else></f:if></button>
+      <button class="dpf-cookie__button dpf-cookie__button--ghost" type="button" data-cookie-settings aria-controls="cookie-consent-options" aria-expanded="false">Einstellungen</button>
+      <button class="dpf-cookie__button dpf-cookie__button--ghost" type="button" data-cookie-save hidden>Auswahl speichern</button>
+      <f:if condition="{externalMedia} || {statistics} || {marketing}">
+        <button class="dpf-cookie__button" type="button" data-cookie-accept>Alle akzeptieren</button>
+      </f:if>
+    </div>
+  </section>
+</div>

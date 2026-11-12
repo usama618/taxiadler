@@ -1,0 +1,19 @@
+categories:
+  adlerFooter:
+    label: Footer und Agenturhinweis
+settings:
+  adler.footerCredit.label:
+    label: Agenturhinweis - Einleitung
+    type: string
+    default: Entwickelt von
+    category: adlerFooter
+  adler.footerCredit.name:
+    label: Agenturhinweis - verlinkter Name
+    type: string
+    default: Waldbyte
+    category: adlerFooter
+  adler.footerCredit.url:
+    label: Agenturhinweis - Link (leer zum Ausblenden)
+    type: string
+    default: https://waldbyte.de/
+    category: adlerFooter

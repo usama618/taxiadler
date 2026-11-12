@@ -1,0 +1,24 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<f:switch expression="{data.adler_layout}">
+  <f:case value="benefits">
+    <section class="benefits-section cms-benefits-section cms-theme-{data.adler_theme}" id="c{data.uid}"><div class="container-wide benefits-layout"><div class="benefits-left"><f:render partial="Heading" arguments="{_all}"/><f:if condition="{files.0}"><f:image image="{files.0}" width="1200" class="cms-editorial-image"/></f:if><f:render partial="TextButton" arguments="{_all}"/><f:if condition="{data.adler_note}"><p>{data.adler_note}</p></f:if></div><div class="benefits-right"><f:for each="{items}" as="item" iteration="i"><article class="benefit-item"><span class="benefit-number">0{i.cycle}</span><span class="benefit-symbol"><f:render partial="Icon" arguments="{name:item.icon}"/></span><div><h3>{item.title}</h3><f:format.html>{item.description}</f:format.html></div><span class="benefit-end"><f:render partial="Icon" arguments="{name:'arrow-up-right'}"/></span></article></f:for></div></div></section>
+  </f:case>
+  <f:case value="service">
+    <section class="service-detail-section" id="c{data.uid}"><div class="container-wide service-detail-layout"><div class="service-detail-copy"><f:render partial="Heading" arguments="{_all}"/></div><aside class="inquiry-panel"><span class="inquiry-panel-icon"><f:render partial="Icon" arguments="{name:'calendar-days'}"/></span><h2>{data.adler_side_header}</h2><f:format.html>{data.adler_side_text}</f:format.html><f:render partial="Buttons" arguments="{_all}"/></aside></div></section>
+  </f:case>
+  <f:case value="airport-routes">
+    <section class="airport-routes-section" id="c{data.uid}"><div class="container-wide"><div class="airport-section-heading"><f:render partial="Heading" arguments="{_all}"/></div><div class="airport-route-details"><f:for each="{items}" as="item"><article><f:render partial="Icon" arguments="{name:item.icon}"/><span class="airport-detail-kicker">{item.title}</span><f:format.html>{item.description}</f:format.html><f:if condition="{item.link}"><f:link.typolink parameter="{item.link}" class="text-link">{item.link_label}<f:render partial="Icon" arguments="{name:'arrow-up-right'}"/></f:link.typolink></f:if></article></f:for></div></div></section>
+  </f:case>
+  <f:case value="airport-price">
+    <section class="airport-price-section" id="c{data.uid}"><div class="container-wide airport-price-layout"><div><f:render partial="Heading" arguments="{_all}"/><f:render partial="Buttons" arguments="{_all}"/></div><div class="airport-price-factors"><span>{data.adler_side_header}</span><f:for each="{items}" as="item"><div><strong>{item.title}</strong><small><f:format.stripTags>{item.description}</f:format.stripTags></small></div></f:for></div></div></section>
+  </f:case>
+  <f:case value="airport-family">
+    <section class="airport-family-section" id="c{data.uid}"><div class="container-wide airport-family-layout"><figure><f:if condition="{files.0}"><f:image image="{files.0}" width="1200" loading="lazy"/></f:if><figcaption>{data.adler_note}</figcaption></figure><div><f:render partial="Heading" arguments="{_all}"/><f:render partial="TextButton" arguments="{_all}"/></div></div></section>
+  </f:case>
+  <f:case value="airport-local">
+    <section class="airport-local-section" id="c{data.uid}"><div class="container-wide airport-local-layout"><div><f:render partial="Heading" arguments="{_all}"/><ul class="airport-service-areas"><f:for each="{items}" as="item"><li><strong>{item.title}</strong><span><f:format.stripTags>{item.description}</f:format.stripTags></span></li></f:for></ul><f:render partial="TextButton" arguments="{_all}"/></div><aside><h3>{data.adler_side_header}</h3><f:format.html>{data.adler_side_text}</f:format.html></aside></div></section>
+  </f:case>
+  <f:defaultCase>
+    <section class="editorial-section cms-theme-{data.adler_theme}" id="c{data.uid}"><div class="container-wide editorial-split"><div><f:render partial="Heading" arguments="{data:data,hideBody:1}"/></div><div class="editorial-copy"><f:if condition="{files.0}"><f:image image="{files.0}" width="1200" loading="lazy" class="cms-editorial-image"/></f:if><f:format.html>{data.bodytext}</f:format.html><f:for each="{items}" as="item"><article class="cms-benefit"><f:render partial="Icon" arguments="{name:item.icon}"/><div><h3>{item.title}</h3><f:format.html>{item.description}</f:format.html></div></article></f:for><f:render partial="TextButton" arguments="{_all}"/></div></div></section>
+  </f:defaultCase>
+</f:switch>

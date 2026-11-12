@@ -1,0 +1,15 @@
+:root { font-optical-sizing: none; }
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../Fonts/dm-sans-variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('../Fonts/manrope-variable.ttf') format('truetype');
+}

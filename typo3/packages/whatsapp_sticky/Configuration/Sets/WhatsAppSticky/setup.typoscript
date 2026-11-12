@@ -1,0 +1,13 @@
+page.includeCSS.whatsapp_sticky = EXT:whatsapp_sticky/Resources/Public/Css/whatsapp-sticky.css
+
+lib.whatsappSticky = FLUIDTEMPLATE
+lib.whatsappSticky {
+  file = EXT:whatsapp_sticky/Resources/Private/Templates/Sticky.html
+  partialRootPaths.10 = EXT:whatsapp_sticky/Resources/Private/Partials/
+  variables {
+    link = TEXT
+    link.field = link
+    label = TEXT
+    label.value = {$whatsappSticky.label}
+  }
+}

@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:render partial="Anchor" arguments="{_all}"/>
+<section class="booking-section cms-form-section cms-form-{data.adler_layout}" id="c{data.uid}" data-preset-destination="{data.adler_preset_destination}">
+  <div class="container-wide booking-container">
+    <f:if condition="{data.adler_side_header}"><aside class="airport-preparation"><h2>{data.adler_side_header}</h2><f:format.html>{data.adler_side_text}</f:format.html></aside></f:if>
+    <div class="booking-content">
+      <div class="booking-card">
+        <div class="booking-card-top">
+          <div><f:render partial="Heading" arguments="{data:data,hideBody:1}"/></div>
+          <div class="booking-side-note"><span class="booking-round-icon"><f:render partial="Icon" arguments="{name:'navigation'}"/></span><div><f:format.html>{data.bodytext}</f:format.html></div></div>
+        </div>
+        <f:if condition="{formPath}"><div class="cms-form" data-privacy-url="{settings.privacyUrl}"><formvh:render persistenceIdentifier="{formPath}" overrideConfiguration="{identifier: 'adler-inquiry-{data.uid}'}"/></div></f:if>
+        <p class="cms-form-note">{data.adler_note}</p>
+      </div>
+      <div class="booking-afterline"><f:for each="{items}" as="item"><span><f:render partial="Icon" arguments="{name:item.icon}"/>{item.title}<f:if condition="{item.description}"><small><f:format.stripTags>{item.description}</f:format.stripTags></small></f:if><f:if condition="{item.link}"><f:link.typolink parameter="{item.link}">{item.link_label}</f:link.typolink></f:if></span></f:for></div>
+    </div>
+  </div>
+</section>
+</html>

@@ -1,0 +1,7 @@
+name: waldbyte/adler
+label: Taxi Adler Website
+dependencies:
+  - app/cookie-consent
+  - app/whatsapp-sticky
+  - typo3/fluid-styled-content
+  - typo3/form

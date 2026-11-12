@@ -1,0 +1,9 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<section class="hero" id="c{data.uid}">
+  <f:if condition="{files.0}"><div class="hero-image" style="background-image:url('{f:uri.image(image: files.0)}')" aria-hidden="true"></div></f:if>
+  <div class="hero-gradient"></div><div class="hero-grain"></div>
+  <div class="container-wide hero-content"><div class="hero-copy"><div class="hero-eyebrow"><span class="eyebrow-stroke"></span>{data.adler_eyebrow}<f:if condition="{data.adler_source_label} && {data.adler_source_link}"><span class="eyebrow-dot"></span><f:link.typolink parameter="{data.adler_source_link}" class="hero-review-link"><f:render partial="Icon" arguments="{name: 'star'}"/>{data.adler_source_label}</f:link.typolink></f:if></div><h1 class="hero-heading">{data.header}<f:if condition="{data.adler_accent}"><br/><em>{data.adler_accent}</em></f:if></h1><div class="hero-subtitle"><f:format.html>{data.bodytext}</f:format.html></div><div class="hero-ctas"><f:render partial="Buttons" arguments="{_all}"/></div></div>
+  <div class="hero-bottom"><div class="hero-facts"><f:for each="{items}" as="item"><div><f:render partial="Icon" arguments="{name: item.icon}"/><span><strong>{item.title}</strong><small><f:format.stripTags>{item.description}</f:format.stripTags></small><f:if condition="{item.link}"><f:link.typolink parameter="{item.link}">{item.link_label}</f:link.typolink></f:if></span></div></f:for></div><f:if condition="{data.adler_primary_link}"><f:link.typolink parameter="{data.adler_primary_link}" class="hero-scroll" additionalAttributes="{aria-label: data.adler_primary_label}"><f:render partial="Icon" arguments="{name: 'arrow-down'}"/></f:link.typolink></f:if></div></div>
+  <div class="hero-side-label" aria-hidden="true">{data.adler_note}</div>
+  <f:render partial="ImageDisclosure" arguments="{label:imageDisclosure}"/>
+</section>

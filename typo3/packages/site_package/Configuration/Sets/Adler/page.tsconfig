@@ -1,0 +1,31 @@
+mod.web_layout.BackendLayouts.adler {
+  title = Taxi Adler Inhaltsseite
+  config {
+    backend_layout {
+      colCount = 1
+      rowCount = 3
+      rows {
+        1.columns.1 {
+          name = Website-Kopf (nur Startseite, global)
+          colPos = 91
+          allowed = adler_header
+        }
+        2.columns.1 {
+          name = Seiteninhalt (frei sortierbare Elemente)
+          colPos = 0
+        }
+        3.columns.1 {
+          name = Zahlungsarten und Website-Fuß (nur Startseite, global)
+          colPos = 92
+          allowed = adler_payments,adler_footer
+        }
+      }
+    }
+  }
+}
+TCEFORM.tt_content.bodytext.config.enableRichtext = 1
+TCEMAIN.permissions {
+  user = 31
+  group = 31
+  everybody = 1
+}

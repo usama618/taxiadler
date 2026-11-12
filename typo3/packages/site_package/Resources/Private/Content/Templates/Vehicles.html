@@ -1,0 +1,7 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<section class="cms-section cms-vehicle-section" id="c{data.uid}"><div class="container-wide vehicle-options">
+<div class="vehicle-options-photos"><f:for each="{items}" as="item"><figure><f:if condition="{item.imageFile}"><f:image image="{item.imageFile}" width="960" alt="{f:if(condition: item.imageFile.alternative, then: item.imageFile.alternative, else: item.title)}" loading="lazy"/></f:if><figcaption><strong>{item.title}</strong><f:format.html>{item.description}</f:format.html><f:if condition="{item.link} && {item.link_label}"><f:link.typolink parameter="{item.link}">{item.link_label}</f:link.typolink></f:if></figcaption></figure></f:for>
+<f:if condition="{serviceImageDisclosure}"><small class="vehicle-image-note">Flotte: KI-visualisiert</small></f:if>
+</div>
+<div class="vehicle-options-copy"><span class="section-label">{data.adler_eyebrow}</span><h2>{data.header}</h2><f:format.html>{data.bodytext}</f:format.html><f:render partial="TextButton" arguments="{_all}"/><small>{data.adler_note}</small></div>
+</div></section>

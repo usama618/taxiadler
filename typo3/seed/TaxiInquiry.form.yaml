@@ -1,0 +1,96 @@
+identifier: taxi-inquiry
+label: 'Taxi Adler Fahrtanfrage'
+type: Form
+renderingOptions:
+  submitButtonLabel: 'Anfrage senden'
+renderables:
+  - identifier: trip
+    label: ''
+    type: Page
+    renderables:
+      - identifier: name
+        label: 'Vor- und Nachname'
+        type: Text
+        properties:
+          fluidAdditionalAttributes: { required: required, autocomplete: name, maxlength: 120 }
+        validators: [{ identifier: NotEmpty }, { identifier: StringLength, options: { maximum: 120 } }]
+      - identifier: phone
+        label: 'Telefonnummer'
+        type: Telephone
+        properties:
+          fluidAdditionalAttributes: { required: required, autocomplete: tel, maxlength: 60 }
+        validators: [{ identifier: NotEmpty }, { identifier: StringLength, options: { maximum: 60 } }]
+      - identifier: email
+        label: 'E-Mail-Adresse'
+        type: Email
+        properties:
+          fluidAdditionalAttributes: { required: required, autocomplete: email, maxlength: 254 }
+        validators: [{ identifier: NotEmpty }, { identifier: EmailAddress }]
+      - identifier: pickup
+        label: 'Von · Abholort'
+        type: Text
+        properties:
+          fluidAdditionalAttributes: { required: required, maxlength: 255 }
+        validators: [{ identifier: NotEmpty }, { identifier: StringLength, options: { maximum: 255 } }]
+      - identifier: destination
+        label: 'Nach · Zielort'
+        type: Text
+        properties:
+          fluidAdditionalAttributes: { maxlength: 255 }
+        validators: [{ identifier: StringLength, options: { maximum: 255 } }]
+      - identifier: date
+        label: 'Reisedatum'
+        type: Date
+        properties:
+          fluidAdditionalAttributes: { required: required }
+        validators: [{ identifier: NotEmpty }]
+      - identifier: time
+        label: 'Uhrzeit (HH:MM)'
+        type: Text
+        properties:
+          fluidAdditionalAttributes: { required: required, placeholder: '14:30', maxlength: 5, pattern: '([01][0-9]|2[0-3]):[0-5][0-9]' }
+        validators:
+          - identifier: NotEmpty
+          - identifier: RegularExpression
+            options: { regularExpression: '/^([01][0-9]|2[0-3]):[0-5][0-9]$/' }
+      - identifier: passengers
+        label: 'Anzahl der Fahrgäste (optional)'
+        type: SingleSelect
+        properties:
+          options:
+            '': 'Bitte auswählen'
+            '1': '1 Person'
+            '2': '2 Personen'
+            '3': '3 Personen'
+            '4': '4 Personen'
+            '5': '5 Personen'
+            '6': '6 Personen'
+            '7+': 'Mehr als 6 Personen'
+      - identifier: notes
+        label: 'Hinweise (optional)'
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes: { placeholder: 'Gruppengröße, Flugnummer, Gepäck, Wünsche … Bitte keine Gesundheitsdaten.', maxlength: 3000 }
+        validators: [{ identifier: StringLength, options: { maximum: 3000 } }]
+      - identifier: consent
+        label: 'Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.'
+        type: Checkbox
+        properties:
+          fluidAdditionalAttributes: { required: required }
+        validators: [{ identifier: NotEmpty }]
+      - identifier: privacy
+        type: StaticText
+        properties:
+          text: 'Datenschutzhinweise: /datenschutz/ – Eine Anfrage ist noch keine verbindliche Buchung.'
+finishers:
+  - identifier: EmailToReceiver
+    options:
+      subject: 'Neue Fahrtanfrage – Taxi Adler Rastatt'
+      recipients: { 'info@taxiadler-rastatt.de': 'Taxi Adler Rastatt' }
+      senderAddress: 'info@taxiadler-rastatt.de'
+      senderName: 'Taxi Adler Website'
+      replyToRecipients: { '{email}': '{name}' }
+      format: html
+  - identifier: Confirmation
+    options:
+      message: 'Vielen Dank. Ihre Anfrage wurde übermittelt. Eine verbindliche Fahrtbestätigung erhalten Sie persönlich von Taxi Adler.'

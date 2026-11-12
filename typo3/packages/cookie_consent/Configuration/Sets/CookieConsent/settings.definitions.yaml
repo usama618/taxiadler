@@ -1,0 +1,54 @@
+categories:
+  cookieConsent:
+    label: Datenschutz und Cookie-Banner
+settings:
+  cookieConsent.cookieName:
+    label: Technischer Name des Einstellungs-Cookies
+    type: string
+    default: adler_cookie_consent
+    category: cookieConsent
+  cookieConsent.version:
+    label: Einwilligungsversion (bei neuen Diensten erhöhen)
+    type: int
+    default: 1
+    category: cookieConsent
+  cookieConsent.privacyUrl:
+    label: Link zur Datenschutzerklärung
+    type: string
+    default: /datenschutz/
+    category: cookieConsent
+  cookieConsent.description:
+    label: Erklärung im Banner
+    type: string
+    default: 'Wir verwenden nur technisch notwendige Funktionen für den Betrieb der Website und speichern Ihre Datenschutzeinstellung für 180 Tage. Es sind keine Analyse- oder Marketing-Dienste eingebunden. WhatsApp und Google Maps öffnen sich erst, wenn Sie den jeweiligen Link anklicken.'
+    category: cookieConsent
+  cookieConsent.externalMedia:
+    label: Kategorie Externe Medien aktivieren (erst nach technischer Einbindung)
+    type: bool
+    default: false
+    category: cookieConsent
+  cookieConsent.externalMediaDescription:
+    label: Anbieter und Zweck externer Medien
+    type: string
+    default: 'Derzeit keine eingebunden. Externe Links laden keine eingebetteten Inhalte.'
+    category: cookieConsent
+  cookieConsent.statistics:
+    label: Kategorie Statistik aktivieren (erst nach technischer Einbindung)
+    type: bool
+    default: false
+    category: cookieConsent
+  cookieConsent.statisticsDescription:
+    label: Anbieter und Zweck der Statistik-Dienste
+    type: string
+    default: Derzeit keine eingebunden.
+    category: cookieConsent
+  cookieConsent.marketing:
+    label: Kategorie Marketing aktivieren (erst nach technischer Einbindung)
+    type: bool
+    default: false
+    category: cookieConsent
+  cookieConsent.marketingDescription:
+    label: Anbieter und Zweck der Marketing-Dienste
+    type: string
+    default: Derzeit keine eingebunden.
+    category: cookieConsent

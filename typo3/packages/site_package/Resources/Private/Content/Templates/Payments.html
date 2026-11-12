@@ -1,0 +1,23 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<section class="payment-methods" id="c{data.uid}">
+    <div class="container-wide payment-methods-layout">
+        <h2>{data.header}</h2>
+        <ul class="payment-methods-logos">
+            <f:for each="{items}" as="item">
+                <li>
+                    <f:if condition="{item.imageFile}">
+                        <f:if condition="{item.link}">
+                            <f:then><f:link.typolink parameter="{item.link}"><f:render section="Logo" arguments="{item: item}" /></f:link.typolink></f:then>
+                            <f:else><f:render section="Logo" arguments="{item: item}" /></f:else>
+                        </f:if>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</section>
+
+<f:section name="Logo">
+    <f:variable name="logoLarge" value="{f:uri.image(image: item.imageFile, width: '276', fileExtension: 'png')}" />
+    <f:image image="{item.imageFile}" alt="{f:if(condition: item.imageFile.alternative, then: item.imageFile.alternative, else: item.title)}" width="92" loading="lazy" additionalAttributes="{srcset: '{logoLarge} 3x'}" />
+</f:section>

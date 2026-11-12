@@ -1,0 +1,23 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<header class="site-header" id="c{data.uid}" data-site-header>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="container-wide site-header-inner">
+    <f:link.page pageUid="{siteRoot}" class="brand" title="{data.header}"><f:if condition="{files.0}"><f:then><f:image image="{files.0}" class="brand-logo" alt="{f:if(condition: files.0.alternative, then: files.0.alternative, else: data.header)}" width="300" /></f:then><f:else>{data.header}</f:else></f:if></f:link.page>
+    <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+      <f:for each="{items}" as="item">
+        <f:if condition="{item.submenu}"><f:then>
+          <div class="nav-dropdown" data-nav-dropdown>
+            <div class="nav-dropdown-heading">
+              <f:link.typolink parameter="{item.link}" class="nav-parent-link"><f:render partial="Icon" arguments="{name:item.icon}"/>{item.title}</f:link.typolink>
+              <button type="button" class="nav-submenu-toggle" data-submenu-toggle aria-expanded="false" aria-controls="nav-submenu-{data.uid}-{item.uid}" aria-label="{item.title}: Untermenü öffnen" data-label="{item.title}"><f:render partial="Icon" arguments="{name:'chevron-down'}"/></button>
+            </div>
+            <div class="nav-submenu" id="nav-submenu-{data.uid}-{item.uid}" hidden>
+              <f:for each="{item.submenu}" as="child"><f:variable name="currentState" value="{f:if(condition: child.current, then: 'page', else: 'false')}"/><f:link.page pageUid="{child.uid}" additionalAttributes="{aria-current: currentState}">{child.title}<f:render partial="Icon" arguments="{name:'arrow-up-right'}"/></f:link.page></f:for>
+            </div>
+          </div>
+        </f:then><f:else><f:link.typolink parameter="{item.link}"><f:render partial="Icon" arguments="{name:item.icon}"/>{item.title}</f:link.typolink></f:else></f:if>
+      </f:for>
+    </nav>
+    <div class="header-actions"><f:if condition="{siteHeader.phoneHref}"><a href="{siteHeader.phoneHref}" class="header-phone"><f:render partial="Icon" arguments="{name: 'phone'}"/><span>{data.adler_phone}</span></a></f:if><f:if condition="{data.adler_primary_label} && {data.adler_primary_link}"><f:link.typolink class="btn btn-gold btn-nav" parameter="{data.adler_primary_link}">{data.adler_primary_label}<f:render partial="Icon" arguments="{name: 'arrow-up-right'}"/></f:link.typolink></f:if><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Menü öffnen"><span></span><span></span><span></span></button></div>
+  </div>
+</header>

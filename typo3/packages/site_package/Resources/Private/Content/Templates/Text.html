@@ -1,0 +1,2 @@
+<f:render partial="Anchor" arguments="{_all}"/>
+<f:if condition="{data.adler_layout} == 'highlights'"><f:then><section class="service-highlights" id="c{data.uid}"><div class="container-wide"><f:format.html>{data.bodytext}</f:format.html></div></section></f:then><f:else><section class="cms-section cms-theme-{data.adler_theme}" id="c{data.uid}"><div class="container-wide legal-copy cms-text"><f:render partial="Heading" arguments="{_all}"/><f:render partial="Buttons" arguments="{_all}"/></div></section></f:else></f:if>

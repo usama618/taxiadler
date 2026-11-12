@@ -1,0 +1,17 @@
+base: 'https://taxi-adler.ddev.site/'
+dependencies:
+  - waldbyte/adler
+errorHandling: {  }
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_DE.UTF-8
+    navigationTitle: Deutsch
+    flag: de
+    hreflang: de-DE
+rootPageId: 1
+routes: {  }
+websiteTitle: 'Taxi Adler Rastatt'

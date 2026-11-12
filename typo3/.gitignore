@@ -1,0 +1,15 @@
+/vendor/
+/var/
+/public/_assets/
+/public/typo3/
+/public/index.php
+/public/fileadmin/
+/public/typo3temp/
+/config/system/settings.php
+/config/system/additional.php
+/.local-credentials
+/.ddev/.global_commands/
+/.ddev/.downloads/
+/.ddev/.importdb*
+*.log
+/.design-before.sql.gz
